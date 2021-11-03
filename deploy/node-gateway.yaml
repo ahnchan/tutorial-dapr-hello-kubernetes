@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodegateway
+  labels:
+    app: nodegateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodegateway
+  template:
+    metadata:
+      labels:
+        app: nodegateway
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "nodegateway"
+        dapr.io/app-port: "8080"
+    spec:
+      containers:
+      - name: node
+        image: hello-nodegateway:latest
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
