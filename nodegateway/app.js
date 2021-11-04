@@ -12,8 +12,8 @@ const daprUrl = `http://localhost:${daprPort}/v1.0/invoke`;
 // const orderUrl = apiUrl + ":3001";
 // const neworderUrl = apiUrl + ":3002";
 
-const orderUrl = "http://localhost:3501/v1.0/invoke/nodeapp1/method";
-const neworderUrl = "http://localhost:3502/v1.0/invoke/nodeapp2/method";
+const orderUrl = daprUrl + "/nodeapp1/method";
+const neworderUrl = daprUrl + "/nodeapp2/method";
 //const neworderUrl = daprUrl + "/nodeapp2";
 
 // Node1 /order

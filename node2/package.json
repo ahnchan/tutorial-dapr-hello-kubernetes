@@ -7,6 +7,10 @@
   "scripts": {
     "dapr-local": "export APP_PORT=3001 && dapr run --app-id nodeapp1 --dapr-http-port 3501 --app-port=$APP_PORT node app.js",
     "dapr-local-powershell": "$Env:APP_PORT=\"3002\" ; dapr run --app-id nodeapp2 --dapr-http-port 3502 --app-port=$Env:APP_PORT node app.js",
+
+    "docker-build": "docker build -t dapr-node2:latest .",
+    "docker-run": "docker run -d --rm --name node2 dapr-node2:latest",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

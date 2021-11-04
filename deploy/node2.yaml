@@ -3,24 +3,24 @@ kind: Deployment
 metadata:
   name: nodeapp2
   labels:
-    app: node2
+    app: nodeapp2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: node2
+      app: nodeapp2
   template:
     metadata:
       labels:
-        app: node2
+        app: nodeapp2
       annotations:
         dapr.io/enabled: "true"
         dapr.io/app-id: "nodeapp2"
         dapr.io/app-port: "3000"
     spec:
       containers:
-      - name: node
-        image: hello-node2:latest
+      - name: nodeapp2
+        image: dapr-node2:latest
         ports:
         - containerPort: 3000
-        imagePullPolicy: Always
+        imagePullPolicy: Never

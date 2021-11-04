@@ -5,6 +5,17 @@
   "main": "app.js",
   "scripts": {
     "dapr-local":  "dapr run --app-id nodegateway --dapr-http-port 3500 --app-port=8080 node app.js",
+    "docker-build": "docker build -t dapr-nodegateway:latest .",
+    "docker-run": "docker run -d --rm --name nodegateway dapr-nodegateway:latest",
+    "docker-debug": "",
+    "docker-log": "",
+    
+    "k8s-apply": "",
+    "k8s-delete": "",
+    "k8s-log": "",
+    "k8s-sh": "kubectl exec --stdin --tty nodegateway-XXXX -- /bin/bash",
+    "k8s-portforward": "kubectl port-forward service/nodegateway-dapr 8080:8080",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

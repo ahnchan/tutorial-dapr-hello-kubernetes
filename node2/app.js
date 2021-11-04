@@ -15,10 +15,10 @@ const daprPort = process.env.DAPR_HTTP_PORT;
 const daprGRPCPort = process.env.DAPR_GRPC_PORT;
 
 const stateStoreName = `statestore`;
-//const stateUrl = `http://localhost:${daprPort}/v1.0/invoke/nodeapp1/method/neworder`;
-const stateUrl = `http://localhost:3501/v1.0/invoke/nodeapp1/method/neworder`;
+const stateUrl = `http://localhost:${daprPort}/v1.0/invoke/nodeapp1/method/neworder`;
+// const stateUrl = `http://localhost:3501/v1.0/invoke/nodeapp1/method/neworder`;
 
-const port = 3002;
+const port = process.env.APP_PORT | 3000;
 
 app.get('/status', (_req, res) => {
     const result = {
