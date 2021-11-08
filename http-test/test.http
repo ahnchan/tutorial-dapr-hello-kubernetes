@@ -1,0 +1,21 @@
+
+GET http://localhost/order/status
+
+###
+
+GET http://localhost/neworder/status
+
+###
+
+GET http://localhost/gateway/status
+
+###
+
+POST http://localhost/neworder
+Content-type: application/json
+
+{ "data": {"orderId":"42"} }
+
+###
+
+GET http://localhost/order

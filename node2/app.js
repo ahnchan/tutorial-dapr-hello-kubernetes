@@ -28,19 +28,15 @@ app.get('/status', (_req, res) => {
 });
 
 app.post('/neworder', (req, res) => {
-    const data = req.body.data;
+    const data = req.body;
     const orderId = data.orderId;
     console.log("Got a new order! Order ID: " + orderId);
     console.log("url: "+ stateUrl);
-
-    const state = [{
-        key: "order",
-        value: data
-    }];
+    console.log("state: "+ JSON.stringify(data));
 
     fetch(stateUrl, {
         method: "POST",
-        body: JSON.stringify(state),
+        body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json"
         }

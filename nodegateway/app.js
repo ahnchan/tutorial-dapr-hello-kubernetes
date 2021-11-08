@@ -39,13 +39,6 @@ app.get('/gateway/status', async(req, res) => {
   res.send(result);
 });
 
-app.get('/gateway/status', async(req, res) => {
-  const result = {
-    GATEWAY: port
-  }
-  res.send(result);
-});
-
 
 // Order status and port informations
 app.get('/order/status', async (req, res) => {
