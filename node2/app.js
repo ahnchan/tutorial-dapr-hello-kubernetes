@@ -16,7 +16,6 @@ const daprGRPCPort = process.env.DAPR_GRPC_PORT;
 
 const stateStoreName = `statestore`;
 const stateUrl = `http://localhost:${daprPort}/v1.0/invoke/nodeapp1/method/neworder`;
-// const stateUrl = `http://localhost:3501/v1.0/invoke/nodeapp1/method/neworder`;
 
 const port = process.env.APP_PORT | 3000;
 
